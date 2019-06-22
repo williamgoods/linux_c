@@ -1,10 +1,10 @@
 all:server client
 
 server:
-	- @gcc us_ucase_sv.c -o server
+	- @gcc -I /root/tlpi-dist/ -o server is_seqnum_sv.c read_line.c /root/tlpi-dist/lib/get_num.c 
 
 client:
-	- @gcc us_ucase_cl.c -o client
+	- @gcc is_seqnum_cl.c read_line.c -o client 
 
 update:
 	- @make clean 

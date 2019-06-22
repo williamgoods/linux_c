@@ -44,8 +44,7 @@ int main(int argc,char* argv[]){
 	for(int i = 1; i < argc ; i++){
 	  	msglen = strlen(argv[i]);
 
-		if(sendto(socketfd,argv[i],msglen,0,(struct sockaddr *)&send_addr,
- 					(socklen_t)sizeof(struct sockaddr_un)) != msglen){
+		if(sendto(socketfd,argv[i],msglen,0,(struct sockaddr *)&send_addr,(socklen_t)sizeof(struct sockaddr_un)) != msglen){
 				handle_error("client sendto failure!");
 		}
 
